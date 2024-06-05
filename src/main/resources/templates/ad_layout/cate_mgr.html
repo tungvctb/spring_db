@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Category management</title>
+	<style th:replace="common/head_tag"></style>
+	<link rel="stylesheet" href="/assets/css/admin_style.css" />
+</head>
+<body>
+	<div th:replace="common/content_first"></div>
+	<section id="content">
+		<table class="table table-light">
+			<thead class="table-dark">
+				<tr>
+					<th>ID</th>
+					<th>NAME</th>
+					<th>ACTIVE</th>
+					<th>ACTION</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="item: ${cates}">
+					<td th:text="${item.Idc}"></td>
+					<td th:text="${item.Name_c}"></td>
+					<td>
+						<input type="checkbox" th:checked="${item.Active==1?True:False}" />
+					</td>
+					<td>
+						<p>Action</p>
+					</td>
+					
+				</tr>
+			</tbody>
+			
+		</table>
+	</section>
+	<div th:replace="common/content_footer"></div>
+	<script>
+		//var title = document.getElementById("subtitle");
+		//title.innerHTML="Product management";
+	</script>
+</body>
+</html>
