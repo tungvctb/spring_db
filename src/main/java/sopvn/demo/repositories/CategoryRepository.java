@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -14,26 +15,28 @@ import sopvn.demo.model.Category;
 
 @Repository
 public class CategoryRepository {
-	private static CategoryRepository _instance = null;
+	@Autowired
 	private JdbcTemplate db;
+	private static CategoryRepository _instance = null;
+
 	
-	public CategoryRepository() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		dataSource.setUrl("jdbc:sqlserver://DESKTOP-S0IBPHF:1433;databaseName=sample1;encrypt=true;trustServerCertificate=true;");
-		dataSource.setUsername("sa");
-		dataSource.setPassword("1");
-		db=new JdbcTemplate(dataSource);
-	}
+//	public CategoryRepository() {
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//		dataSource.setUrl("jdbc:sqlserver://localhost:1433;databaseName=sample1;encrypt=true;trustServerCertificate=true;");
+//		dataSource.setUsername("sa");
+//		dataSource.setPassword("123");
+//		db=new JdbcTemplate(dataSource);
+//	}
 	
-	public static CategoryRepository Instance() {
-		if(_instance == null) {
-			_instance = new CategoryRepository();
-		}
-		return _instance;
-	}
+//	public static CategoryRepository Instance() {
+//		if(_instance == null) {
+//			_instance = new CategoryRepository();
+//		}
+//		return _instance;
+//	}
 	
-	class CategoryRowMapper implements RowMapper<Category>{
+	private static class CategoryRowMapper implements RowMapper<Category>{
 		@Override
 		public Category mapRow(ResultSet rs, int rowNum) throws SQLException{
 			Category category = new Category();

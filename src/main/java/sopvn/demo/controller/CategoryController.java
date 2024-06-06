@@ -18,7 +18,7 @@ public class CategoryController {
 	CategoryRepository rep;
 	@GetMapping("/view")
 	public String viewMgr(Model model) {
-		List<Category> lsc = rep.Instance().findAll();
+		List<Category> lsc = rep.findAll();
 		model.addAttribute("cates", lsc);
 		return "ad_layout/cate_mgr";
 	}

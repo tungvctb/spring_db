@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: sb_bai_3
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=sample1;encrypt=true;trustServerCertificate=true;
+    username: sa
+    password: 123
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+  port: 8186
