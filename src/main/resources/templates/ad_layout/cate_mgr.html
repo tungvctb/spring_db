@@ -26,7 +26,8 @@
 						<input type="checkbox" th:checked="${item.Active==1?True:False}" />
 					</td>
 					<td>
-						<p>Action</p>
+						<a class="btn btn-info">Chi tiết</a>
+						<a th:href="@{/detail(idc=${category.id})}" class="btn btn-info">Chi tiết</a>
 					</td>
 					
 				</tr>
