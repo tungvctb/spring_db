@@ -1,10 +1,14 @@
-spring.application.name=sb_bai_3
-server.error.whitelabel.enabled=false
-server.port=8186
+spring:
+  application:
+    name: sb_bai_3
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=sample1;encrypt=true;trustServerCertificate=true;
+    username: sa
+    password: 123
 
-spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
-spring.datasource.url=jdbc:sqlserver://DESKTOP-S0IBPHF:1433;databaseName=sample1;encrypt=true;trustServerCertificate=true;
-spring.datasource.username=sa
-spring.datasource.password=1
-
-
+server:
+  error:
+    whitelabel:
+      enabled: false
+  port: 8186
