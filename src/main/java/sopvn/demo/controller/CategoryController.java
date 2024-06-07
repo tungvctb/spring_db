@@ -21,13 +21,13 @@ public class CategoryController {
 	CategoryRepository rep;
 	@GetMapping(Mappings.CATE_INDEX)
 	public String viewMgr(Model model) {
-		List<Category> lsc = rep.Instance().findAll();
+		List<Category> lsc = rep.findAll();
 		model.addAttribute(AttributeNames.CATES, lsc);
 		return "ad_layout/cate_mgr";
 	}
 	@GetMapping("/detail")
 	public String detail(@RequestParam("idc") int idc, Model model) {
-		Category category = rep.Instance().findById(idc);
+		Category category = rep.findById(idc);
 		model.addAttribute("category", category);
 		return "ad_layout/cate_detail";
 	}

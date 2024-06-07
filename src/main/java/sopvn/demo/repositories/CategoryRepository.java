@@ -15,23 +15,24 @@ import sopvn.demo.model.Category;
 
 @Repository
 public class CategoryRepository {
-	private static CategoryRepository _instance = null;
+	//private static CategoryRepository _instance = null;
+	@Autowired
 	private JdbcTemplate db;
-	public CategoryRepository() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		dataSource.setUrl("jdbc:sqlserver://DESKTOP-S0IBPHF:1433;databaseName=sample1;encrypt=true;trustServerCertificate=true;");
-		dataSource.setUsername("sa");
-		dataSource.setPassword("1");
-		db=new JdbcTemplate(dataSource);
-	}
+//	public CategoryRepository() {
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//		dataSource.setUrl("jdbc:sqlserver://DESKTOP-S0IBPHF:1433;databaseName=sample1;encrypt=true;trustServerCertificate=true;");
+//		dataSource.setUsername("sa");
+//		dataSource.setPassword("1");
+//		db=new JdbcTemplate(dataSource);
+//	}
 	
-	public static CategoryRepository Instance() {
-		if(_instance == null) {
-			_instance = new CategoryRepository();
-		}
-		return _instance;
-	}
+//	public static CategoryRepository Instance() {
+//		if(_instance == null) {
+//			_instance = new CategoryRepository();
+//		}
+//		return _instance;
+//	}
 	
 	class CategoryRowMapper implements RowMapper<Category>{
 		@Override

@@ -5,10 +5,10 @@ spring:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: jdbc:sqlserver://localhost:1433;databaseName=sample1;encrypt=true;trustServerCertificate=true;
     username: sa
-    password: 123
+    password: 1
   web:
     resources:
-      static-locations: classpath:/static/
+      static-locations: classpath:/static
 server:
   error:
     whitelabel:
