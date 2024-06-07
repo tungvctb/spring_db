@@ -11,16 +11,18 @@ import org.springframework.ui.Model;
 //import ch.qos.logback.core.model.Model;
 import sopvn.demo.model.Category;
 import sopvn.demo.repositories.CategoryRepository;
+import sopvn.demo.utils.AttributeNames;
+import sopvn.demo.utils.Mappings;
 
 @Controller
 @RequestMapping("/admin/cate")
 public class CategoryController {	
 	@Autowired
 	CategoryRepository rep;
-	@GetMapping("/view")
+	@GetMapping(Mappings.CATE_INDEX)
 	public String viewMgr(Model model) {
 		List<Category> lsc = rep.Instance().findAll();
-		model.addAttribute("cates", lsc);
+		model.addAttribute(AttributeNames.CATES, lsc);
 		return "ad_layout/cate_mgr";
 	}
 	@GetMapping("/detail")
@@ -29,4 +31,10 @@ public class CategoryController {
 		model.addAttribute("category", category);
 		return "ad_layout/cate_detail";
 	}
+
+	@GetMapping("/create")
+	public String create(Model model) {
+		return "ad_layout/cate_detail";
+	}
+	
 }

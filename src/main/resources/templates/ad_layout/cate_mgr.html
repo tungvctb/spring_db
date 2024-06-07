@@ -20,14 +20,13 @@
 			</thead>
 			<tbody>
 				<tr th:each="item: ${cates}">
-					<td th:text="${item.Idc}"></td>
-					<td th:text="${item.Name_c}"></td>
+					<td th:text="${item.getIdc()}"></td>
+					<td th:text="${item.name_c}"></td>
 					<td>
-						<input type="checkbox" th:checked="${item.Active==1?True:False}" />
+						<input type="checkbox" th:checked="${item.active==1?True:False}" />
 					</td>
 					<td>
-						<a class="btn btn-info">Chi tiết</a>
-						<a th:href="@{/detail(idc=${category.id})}" class="btn btn-info">Chi tiết</a>
+						<a class="btn btn-info" th:href="@{/admin/cate/detail(idc=${item.idc})}" >Chi tiết</a>
 					</td>
 					
 				</tr>

@@ -17,7 +17,6 @@ import sopvn.demo.model.Category;
 public class CategoryRepository {
 	private static CategoryRepository _instance = null;
 	private JdbcTemplate db;
-	
 	public CategoryRepository() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");

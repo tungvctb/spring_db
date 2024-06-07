@@ -6,9 +6,11 @@ spring:
     url: jdbc:sqlserver://localhost:1433;databaseName=sample1;encrypt=true;trustServerCertificate=true;
     username: sa
     password: 123
-
+  web:
+    resources:
+      static-locations: classpath:/static/
 server:
   error:
     whitelabel:
       enabled: false
-  port: 8186
+  port: 8189

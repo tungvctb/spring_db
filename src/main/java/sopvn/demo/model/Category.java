@@ -25,7 +25,7 @@ public class Category {
 	 
 	 public int getIdc() {
 		 return idc;
-	 }
+	 } 
 	 
 	 public void setIdc(int idc) {
 		 this.idc = idc;
